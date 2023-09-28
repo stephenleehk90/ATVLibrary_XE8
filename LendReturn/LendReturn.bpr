@@ -1,0 +1,217 @@
+# ---------------------------------------------------------------------------
+!if !$d(BCB)
+BCB = $(MAKEDIR)\..
+!endif
+
+# ---------------------------------------------------------------------------
+# IDE SECTION
+# ---------------------------------------------------------------------------
+# The following section of the project makefile is managed by the BCB IDE.
+# It is recommended to use the IDE to change any of the values in this
+# section.
+# ---------------------------------------------------------------------------
+
+VERSION = BCB.03
+# ---------------------------------------------------------------------------
+PROJECT = LendReturn.dll
+OBJFILES = LendReturn.obj dmData.obj lenddatas.obj InfoReport.obj options.obj find.obj \
+  CommFunc.obj DllForm.obj DllHead.obj lendmain.obj Borrower.obj FindUser.obj \
+  PrevFrm.obj FindMaterail.obj
+RESFILES = LendReturn.res
+DEFFILE =
+RESDEPEN = $(RESFILES) dmData.dfm InfoReport.dfm options.dfm find.dfm lendmain.dfm \
+  Borrower.dfm FindUser.dfm PrevFrm.dfm FindMaterail.dfm
+LIBFILES =
+LIBRARIES = elv1.lib AOUTLBRP.lib newpkg.lib dvtlab.lib dclocx35.lib VCLSMP35.lib \
+  NMFAST35.lib vcldb35.lib QRPT35.lib VCLX35.lib bcbsmp35.lib VCL35.lib
+SPARELIBS = VCL35.lib bcbsmp35.lib VCLX35.lib QRPT35.lib vcldb35.lib NMFAST35.lib \
+  VCLSMP35.lib dclocx35.lib dvtlab.lib newpkg.lib AOUTLBRP.lib elv1.lib
+PACKAGES = VCLX35.bpi VCL35.bpi VCLDB35.bpi VCLDBX35.bpi bcbsmp35.bpi dclocx35.bpi \
+  QRPT35.bpi TEEUI35.bpi TEEDB35.bpi TEE35.bpi ibsmp35.bpi DSS35.bpi NMFAST35.bpi \
+  INETDB35.bpi INET35.bpi VCLMID35.bpi
+# ---------------------------------------------------------------------------
+PATHCPP = .;
+PATHASM = .;
+PATHPAS = .;
+PATHRC = .;
+DEBUGLIBPATH = $(BCB)\lib\debug
+RELEASELIBPATH = $(BCB)\lib\release
+# ---------------------------------------------------------------------------
+CFLAG1 = -WD -O2 -Hc -w -Ve -k- -vi -c -b- -w-par -w-inl -Vx
+CFLAG2 = -D_RTLDLL \
+  -I$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\dvtlab;$(BCB)\lib\aoutbar;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn \
+  -H=$(BCB)\lib\vcl35.csm
+CFLAG3 = -Tkh30000 -4
+PFLAGS = -D_RTLDLL \
+  -U$(BCB)\lib\aoutbar;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\dvtlab;$(BCB)\lib\extlistv;$(RELEASELIBPATH) \
+  -I$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\dvtlab;$(BCB)\lib\aoutbar;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn \
+  -$L- -$D- -v -JPHN -M
+RFLAGS = -D_RTLDLL \
+  -i$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\dvtlab;$(BCB)\lib\aoutbar;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn
+AFLAGS = /i$(BCB)\include /i$(BCB)\include\vcl /i$(BCB)\lib\dvtlab /i$(BCB)\lib\aoutbar \
+  /i$(BCB)\lib\extlistv /i$(BCB)\lib\ImageEn /d_RTLDLL /mx /w2 /zn
+LFLAGS = -L$(BCB)\lib\aoutbar;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\dvtlab;$(BCB)\lib\extlistv;$(RELEASELIBPATH) \
+  -aa -Tpd -x -Gn -Gi
+IFLAGS =
+# ---------------------------------------------------------------------------
+ALLOBJ = c0d32.obj sysinit.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib
+# ---------------------------------------------------------------------------
+!ifdef IDEOPTIONS
+
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=1
+MinorVer=3
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=2052
+CodePage=936
+
+[Version Info Keys]
+CompanyName=Founder
+FileDescription=
+FileVersion=1.3.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=2002.7
+
+[HistoryLists\hlIncludePath]
+Count=7
+Item0=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\dvtlab;$(BCB)\lib\aoutbar;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn
+Item1=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\dvtlab;$(BCB)\lib\aoutlbar;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn
+Item2=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\dvtlab;$(BCB)\lib\aoutlbar;$(BCB)\lib\extlistv
+Item3=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\dvtlab;$(BCB)\lib\aoutlbar;$(BCB)\lib\extlstv
+Item4=..\eventlog;..\main;..\LendReturn;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\dvtlab;$(BCB)\lib\aoutlbar
+Item5=..\eventlog;..\main;..\LendReturn;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\dvtlab
+Item6=..\eventlog;..\main;..\LendReturn;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=9
+Item0=$(BCB)\lib\aoutbar;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\dvtlab;$(BCB)\lib\extlistv
+Item1=$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\dvtlab;$(BCB)\lib\extlistv
+Item2=$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\dvtlab;$(BCB)\lib\extlstv
+Item3=$(BCB)\lib\advgrid;..\eventlog;..\main;..\LendReturn;$(BCB)\lib\aoutlbar;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\dvtlab
+Item4=..\eventlog;..\main;..\LendReturn;$(BCB)\lib\aoutlbar;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\dvtlab
+Item5=..\eventlog;..\main;..\LendReturn;$(BCB)\lib\aoutlbar;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\dvtlab;$(BCB)\autolookbar
+Item6=..\eventlog;..\main;..\LendReturn;$(BCB)\autolookbar;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\dvtlab
+Item7=..\eventlog;..\main;..\LendReturn;$(BCB)\autolookbar;$(BCB)\lib\obj;$(BCB)\lib
+Item8=$(BCB)\lib\dvtlab;..\eventlog;..\main;..\LendReturn;$(BCB)\lib\aoutlbar;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=3
+Item0=E:\jetwing\program\program\LendReturn;$(BCB)\source\vcl;$(BCB)\lib\dvtlab
+Item1=$(BCB)\source\vcl;$(BCB)\lib\dvtlab
+Item2=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=2
+Item0=_RTLDLL;USEPACKAGES
+Item1=_RTLDLL
+
+[HistoryLists\hlHostApplication]
+Count=9
+Item0=D:\Program Files\Founder\Library\Main\Library.exe
+Item1=E:\WORK\library\Main\Library.exe
+Item2=I:\atv\8.7\expand\Main\Library.exe
+Item3=H:\WORK\library\Main\Library.exe
+Item4=I:\bcb3\Library\main\Library.exe
+Item5=G:\WORK\library\Main\Library.exe
+Item6=D:\WORK\library\Main\Library.exe
+Item7=..\Main\Library.exe
+Item8=E:\shao\library\Main\Library.exe
+
+[Debugging]
+DebugSourceDirs=E:\jetwing\program\program\LendReturn;$(BCB)\source\vcl;$(BCB)\lib\dvtlab
+
+[Parameters]
+RunParams=
+HostApplication=D:\Program Files\Founder\Library\Main\Library.exe
+
+!endif
+
+# ---------------------------------------------------------------------------
+# MAKE SECTION
+# ---------------------------------------------------------------------------
+# This section of the project file is not used by the BCB IDE.  It is for
+# the benefit of building from the command-line using the MAKE utility.
+# ---------------------------------------------------------------------------
+
+.autodepend
+# ---------------------------------------------------------------------------
+!if !$d(BCC32)
+BCC32 = bcc32
+!endif
+
+!if !$d(DCC32)
+DCC32 = dcc32
+!endif
+
+!if !$d(TASM32)
+TASM32 = tasm32
+!endif
+
+!if !$d(LINKER)
+LINKER = ilink32
+!endif
+
+!if !$d(BRCC32)
+BRCC32 = brcc32
+!endif
+# ---------------------------------------------------------------------------
+!if $d(PATHCPP)
+.PATH.CPP = $(PATHCPP)
+.PATH.C   = $(PATHCPP)
+!endif
+
+!if $d(PATHPAS)
+.PATH.PAS = $(PATHPAS)
+!endif
+
+!if $d(PATHASM)
+.PATH.ASM = $(PATHASM)
+!endif
+
+!if $d(PATHRC)
+.PATH.RC  = $(PATHRC)
+!endif
+# ---------------------------------------------------------------------------
+$(PROJECT): $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(BCB)\BIN\$(LINKER) @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES)
+!
+# ---------------------------------------------------------------------------
+.pas.hpp:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.pas.obj:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.cpp.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.c.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.asm.obj:
+    $(BCB)\BIN\$(TASM32) $(AFLAGS) $<, $@
+
+.rc.res:
+    $(BCB)\BIN\$(BRCC32) $(RFLAGS) -fo$@ $<
+# ---------------------------------------------------------------------------
