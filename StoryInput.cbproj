@@ -1,0 +1,566 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{39DEFEEF-991F-49D5-B74D-A9CA95D4DB33}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>StoryInput.cpp</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<LinkPackageStatics>addict4_d14.lib;TMSVCLUIPackPkgD2010.lib;VclSmp.lib;fqb140.lib</LinkPackageStatics>
+			<OutputExt>exe</OutputExt>
+			<LinkPackageImports>rtl.bpi;vcl.bpi;PKIECtrl14.bpi;vclx.bpi;vcldb.bpi;dbrtl.bpi;adortl.bpi;bdertl.bpi;xmlrtl.bpi;vclactnband.bpi;vclimg.bpi;frx14.bpi;fs14.bpi;frxDB14.bpi;fsDB14.bpi;bcbsmp.bpi</LinkPackageImports>
+			<Multithreaded>true</Multithreaded>
+			<ProjectType>CppVCLApplication</ProjectType>
+			<PackageImports>vclx.bpi;vcl.bpi;vclimg.bpi;dbrtl.bpi;Rave77VCL.bpi;bdertl.bpi;rtl.bpi;bcbie.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;vcldb.bpi;vcldbx.bpi;vcltouch.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;vclib.bpi;ibxpress.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;intrawebdb_100_140.bpi;Intraweb_100_140.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inetdb.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DbxClientDriver.bpi;DataSnapServer.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;DBXFirebirdDriver.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi;PKIECtrl14.bpi;frxDBX14.bpi;fs14.bpi;fsDB14.bpi;frx14.bpi;frxDB14.bpi</PackageImports>
+			<AllPackageLibs>rtl.lib;vcl.lib;PKIECtrl14.lib;vclx.lib;addict4_d14.lib;vcldb.lib;dbrtl.lib;TMSVCLUIPackPkgD2010.lib;adortl.lib;bdertl.lib;xmlrtl.lib;vclactnband.lib;vclimg.lib;VclSmp.lib;frx14.lib;fs14.lib;fqb140.lib;frxDB14.lib;fsDB14.lib;bcbsmp.lib</AllPackageLibs>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DynamicRTL>true</DynamicRTL>
+			<UsePackages>true</UsePackages>
+			<IncludePath>Template\;MaterialInput\;LendReturn\;EventLog\;WordBank\;UserAdmin\;C:\Sources\StoryInput\;$(CG_BOOST_ROOT)\boost\tr1\tr1;$(BDS)\include;$(BDS)\include\dinkumware;$(BDS)\include\vcl;$(CG_BOOST_ROOT);C:\ProgramData\ImageEn\Delphi2010;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>Template\;MaterialInput\;LendReturn\;EventLog\;WordBank\;UserAdmin\;C:\Sources\StoryInput\;$(BDS)\lib\obj;C:\Program Files\Addict4\Source\d14inst;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+			<ILINK_TranslatedLibraryPath>$(BDS)\lib\$(LANGDIR)</ILINK_TranslatedLibraryPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<Defines>_DEBUG;$(Defines)</Defines>
+			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+			<IntermediateOutputDir>Debug</IntermediateOutputDir>
+			<BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+			<DCC_Define>DEBUG</DCC_Define>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<BCC_StackFrames>true</BCC_StackFrames>
+			<ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<TASM_Debugging>Full</TASM_Debugging>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+			<ILINK_TranslatedLibraryPath>$(BDS)\lib\$(LANGDIR)\debug;$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<BCC_Defines>BOOST_ALL_NO_LIB;$(BCC_Defines)</BCC_Defines>
+			<Defines>NDEBUG;$(Defines)</Defines>
+			<IntermediateOutputDir>Release</IntermediateOutputDir>
+			<ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<TASM_Debugging>None</TASM_Debugging>
+			<ILINK_TranslatedLibraryPath>$(BDS)\lib\$(LANGDIR)\release;$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+		</PropertyGroup>
+		<ItemGroup>
+			<CppCompile Include="ArchiveThread.cpp">
+				<DependentOn>ArchiveThread.h</DependentOn>
+				<BuildOrder>16</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="StoryData.cpp">
+				<Form>dmdStory</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>StoryData.h</DependentOn>
+				<BuildOrder>3</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MaterialIDFrm.cpp">
+				<Form>frmMaterialID</Form>
+				<DependentOn>MaterialIDFrm.h</DependentOn>
+				<BuildOrder>10</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="htmlform.cpp">
+				<DependentOn>htmlform.h</DependentOn>
+				<BuildOrder>8</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UserAdmin\DataProcess.cpp">
+				<DependentOn>UserAdmin\DataProcess.h</DependentOn>
+				<Suffix>_1</Suffix>
+				<BuildOrder>19</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="CommFunc.cpp">
+				<DependentOn>CommFunc.h</DependentOn>
+				<Suffix>_3</Suffix>
+				<BuildOrder>4</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PrintSetFrm.cpp">
+				<DependentOn>PrintSetFrm.h</DependentOn>
+				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UserAdmin\SelectUserFrm.cpp">
+				<Form>frmSelectUsers</Form>
+				<DependentOn>UserAdmin\SelectUserFrm.h</DependentOn>
+				<BuildOrder>23</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ArchiveDialog.cpp">
+				<Form>frmArchive</Form>
+				<DependentOn>ArchiveDialog.h</DependentOn>
+				<BuildOrder>15</BuildOrder>
+			</CppCompile>
+			<LibFiles Include="api232.lib">
+				<IgnorePath>true</IgnorePath>
+				<BuildOrder>12</BuildOrder>
+			</LibFiles>
+			<CppCompile Include="rs422.cpp">
+				<DependentOn>rs422.h</DependentOn>
+				<BuildOrder>13</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="VTR.cpp">
+				<BuildOrder>14</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UserAdmin\UserAdmin.cpp">
+				<BuildOrder>24</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MaterialInput\DataProcess.cpp">
+				<DependentOn>MaterialInput\DataProcess.h</DependentOn>
+				<Suffix>_0</Suffix>
+				<BuildOrder>58</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="WordBank\SearchForm.cpp">
+				<Form>frmSearch</Form>
+				<DependentOn>WordBank\SearchForm.h</DependentOn>
+				<BuildOrder>28</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="frm_Main.cpp">
+				<Form>frmMain</Form>
+				<DependentOn>frm_Main.h</DependentOn>
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MaterialInput\CommFunc.cpp">
+				<DependentOn>MaterialInput\CommFunc.h</DependentOn>
+				<Suffix>_2</Suffix>
+				<BuildOrder>57</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="StoryInput.res">
+				<BuildOrder>1</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="BrowseTimeFrm.cpp">
+				<Form>frmBrowseTime</Form>
+				<DependentOn>BrowseTimeFrm.h</DependentOn>
+				<BuildOrder>9</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MaterialInput\MaterialFrm.cpp">
+				<Form>frmMaterials</Form>
+				<DependentOn>MaterialInput\MaterialFrm.h</DependentOn>
+				<BuildOrder>60</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="WordBank\CommFunc.cpp">
+				<DependentOn>WordBank\CommFunc.h</DependentOn>
+				<Suffix>_5</Suffix>
+				<BuildOrder>26</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ChangeMaterialIDForm.cpp">
+				<Form>frmChangeM</Form>
+				<DependentOn>ChangeMaterialIDForm.h</DependentOn>
+				<BuildOrder>17</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MaterialInput\MaterialData.cpp">
+				<Form>dmdMaterials</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>MaterialInput\MaterialData.h</DependentOn>
+				<BuildOrder>59</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="WordBank\frmWord.cpp">
+				<Form>frmWB</Form>
+				<DependentOn>WordBank\frmWord.h</DependentOn>
+				<BuildOrder>27</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="AboutFrm.cpp">
+				<Form>AboutBox</Form>
+				<DependentOn>AboutFrm.h</DependentOn>
+				<BuildOrder>73</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PwdFrm.cpp">
+				<Form>frmPassword</Form>
+				<DependentOn>PwdFrm.h</DependentOn>
+				<BuildOrder>74</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="StoryInput.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LoginFrm.cpp">
+				<Form>frmLogin</Form>
+				<DependentOn>LoginFrm.h</DependentOn>
+				<BuildOrder>7</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UserAdmin\SelectGroupFrm.cpp">
+				<Form>frmSelectGroups</Form>
+				<DependentOn>UserAdmin\SelectGroupFrm.h</DependentOn>
+				<BuildOrder>22</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\CommFunc.cpp">
+				<DependentOn>EventLog\CommFunc.h</DependentOn>
+				<Suffix>_4</Suffix>
+				<BuildOrder>30</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="DataProcess.cpp">
+				<DependentOn>DataProcess.h</DependentOn>
+				<Suffix>_2</Suffix>
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Capture.cpp">
+				<Form>frmCapture</Form>
+				<DependentOn>Capture.h</DependentOn>
+				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\ConfigFrm.cpp">
+				<Form>frmConfig</Form>
+				<DependentOn>EventLog\ConfigFrm.h</DependentOn>
+				<BuildOrder>31</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\QueryFrmLog.cpp">
+				<Form>frmQueryLog</Form>
+				<DependentOn>EventLog\QueryFrmLog.h</DependentOn>
+				<BuildOrder>63</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MaterialInput\MaterialInput.cpp">
+				<BuildOrder>61</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\utGlDm.cpp">
+				<Form>dmGlobal</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>EventLog\utGlDm.h</DependentOn>
+				<BuildOrder>43</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="WordBank\WordBank.cpp">
+				<BuildOrder>29</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UserAdmin\CommFunc.cpp">
+				<DependentOn>UserAdmin\CommFunc.h</DependentOn>
+				<Suffix>_1</Suffix>
+				<BuildOrder>18</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\DestTbFrm.cpp">
+				<Form>frmDestTbs</Form>
+				<DependentOn>EventLog\DestTbFrm.h</DependentOn>
+				<BuildOrder>33</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\DirectoryFrm.cpp">
+				<Form>frmDirectory</Form>
+				<DependentOn>EventLog\DirectoryFrm.h</DependentOn>
+				<BuildOrder>34</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\EventLog.cpp">
+				<BuildOrder>35</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\SaveFrm.cpp">
+				<Form>frmSave</Form>
+				<DependentOn>EventLog\SaveFrm.h</DependentOn>
+				<BuildOrder>40</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\LogFrm.cpp">
+				<Form>frmLogs</Form>
+				<DependentOn>EventLog\LogFrm.h</DependentOn>
+				<BuildOrder>37</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\RestypeFrm.cpp">
+				<Form>frmResType</Form>
+				<DependentOn>EventLog\RestypeFrm.h</DependentOn>
+				<BuildOrder>39</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\lenddatas.cpp">
+				<DependentOn>LendReturn\lenddatas.h</DependentOn>
+				<BuildOrder>53</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\LogData.cpp">
+				<Form>dmdLog</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>EventLog\LogData.h</DependentOn>
+				<BuildOrder>36</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\SelectFieldFrm.cpp">
+				<Form>frmSelectFields</Form>
+				<DependentOn>EventLog\SelectFieldFrm.h</DependentOn>
+				<BuildOrder>41</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\SourceTbFrm.cpp">
+				<Form>frmSourceTbs</Form>
+				<DependentOn>EventLog\SourceTbFrm.h</DependentOn>
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\options.cpp">
+				<Form>frmOption</Form>
+				<DependentOn>LendReturn\options.h</DependentOn>
+				<BuildOrder>56</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UserAdmin\UserData.cpp">
+				<Form>dmdUserAdmin</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>UserAdmin\UserData.h</DependentOn>
+				<BuildOrder>25</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\gotopage.cpp">
+				<Form>fmGotoPage</Form>
+				<DependentOn>LendReturn\gotopage.h</DependentOn>
+				<BuildOrder>50</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\find.cpp">
+				<Form>frmFind</Form>
+				<DependentOn>LendReturn\find.h</DependentOn>
+				<BuildOrder>47</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\Borrower.cpp">
+				<Form>frmBorrower</Form>
+				<DependentOn>LendReturn\Borrower.h</DependentOn>
+				<BuildOrder>44</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EventLog\DataProcess.cpp">
+				<DependentOn>EventLog\DataProcess.h</DependentOn>
+				<BuildOrder>32</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="UserAdmin\UserFrm.cpp">
+				<Form>frmUserAdmin</Form>
+				<DependentOn>UserAdmin\UserFrm.h</DependentOn>
+				<BuildOrder>26</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="frm_StoryInput.cpp">
+				<Form>frmStoryInput</Form>
+				<DependentOn>frm_StoryInput.h</DependentOn>
+				<BuildOrder>25</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Template\Template.cpp">
+				<BuildOrder>67</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\CommFunc.cpp">
+				<DependentOn>LendReturn\CommFunc.h</DependentOn>
+				<Suffix>_0</Suffix>
+				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MaterialInput\ShelfFrm.cpp">
+				<Form>frmShelf</Form>
+				<DependentOn>MaterialInput\ShelfFrm.h</DependentOn>
+				<BuildOrder>62</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\InfoReport.cpp">
+				<Form>frmPreview</Form>
+				<DependentOn>LendReturn\InfoReport.h</DependentOn>
+				<BuildOrder>51</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\FindMaterail.cpp">
+				<Form>frmMaterial</Form>
+				<DependentOn>LendReturn\FindMaterail.h</DependentOn>
+				<BuildOrder>48</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\LendReturn.cpp">
+				<BuildOrder>55</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\dmData.cpp">
+				<Form>dmLendDM</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>LendReturn\dmData.h</DependentOn>
+				<BuildOrder>46</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\FindUser.cpp">
+				<Form>frmFindUser</Form>
+				<DependentOn>LendReturn\FindUser.h</DependentOn>
+				<BuildOrder>49</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MaterialInput\QueryFrm.cpp">
+				<Form>frmQuery</Form>
+				<DependentOn>MaterialInput\QueryFrm.h</DependentOn>
+				<BuildOrder>63</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\PrevFrm.cpp">
+				<Form>frmPrev</Form>
+				<DependentOn>LendReturn\PrevFrm.h</DependentOn>
+				<BuildOrder>57</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Template\ImportFrm.cpp">
+				<Form>frmInout</Form>
+				<DependentOn>Template\ImportFrm.h</DependentOn>
+				<BuildOrder>66</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Template\utAuth.cpp">
+				<Form>fmAuthority</Form>
+				<DependentOn>Template\utAuth.h</DependentOn>
+				<BuildOrder>69</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Template\TemplateForm.cpp">
+				<Form>frmTemplate</Form>
+				<DependentOn>Template\TemplateForm.h</DependentOn>
+				<BuildOrder>68</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Template\CommFunc.cpp">
+				<DependentOn>Template\CommFunc.h</DependentOn>
+				<BuildOrder>64</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Template\WizardFrm.cpp">
+				<Form>frmWizard</Form>
+				<DependentOn>Template\WizardFrm.h</DependentOn>
+				<BuildOrder>72</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Template\utNewExt.cpp">
+				<Form>fmEditExtFields</Form>
+				<DependentOn>Template\utNewExt.h</DependentOn>
+				<BuildOrder>71</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LendReturn\lendmain.cpp">
+				<Form>frmLendSys</Form>
+				<DependentOn>LendReturn\lendmain.h</DependentOn>
+				<BuildOrder>54</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Template\htmlformTemp.cpp">
+				<DependentOn>Template\htmlformTemp.h</DependentOn>
+				<BuildOrder>73</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Template\utGlobDm.cpp">
+				<Form>dmTemplate</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>Template\utGlobDm.h</DependentOn>
+				<BuildOrder>70</BuildOrder>
+			</CppCompile>
+			<FormResources Include="StoryData.dfm"/>
+			<FormResources Include="MaterialIDFrm.dfm"/>
+			<FormResources Include="UserAdmin\SelectUserFrm.dfm"/>
+			<FormResources Include="ArchiveDialog.dfm"/>
+			<FormResources Include="WordBank\SearchForm.dfm"/>
+			<FormResources Include="frm_Main.dfm"/>
+			<FormResources Include="BrowseTimeFrm.dfm"/>
+			<FormResources Include="MaterialInput\MaterialFrm.dfm"/>
+			<FormResources Include="ChangeMaterialIDForm.dfm"/>
+			<FormResources Include="MaterialInput\MaterialData.dfm"/>
+			<FormResources Include="WordBank\frmWord.dfm"/>
+			<FormResources Include="AboutFrm.dfm"/>
+			<FormResources Include="PwdFrm.dfm"/>
+			<FormResources Include="LoginFrm.dfm"/>
+			<FormResources Include="UserAdmin\SelectGroupFrm.dfm"/>
+			<FormResources Include="Capture.dfm"/>
+			<FormResources Include="EventLog\ConfigFrm.dfm"/>
+			<FormResources Include="EventLog\QueryFrmLog.dfm"/>
+			<FormResources Include="EventLog\utGlDm.dfm"/>
+			<FormResources Include="EventLog\DestTbFrm.dfm"/>
+			<FormResources Include="EventLog\DirectoryFrm.dfm"/>
+			<FormResources Include="EventLog\SaveFrm.dfm"/>
+			<FormResources Include="EventLog\LogFrm.dfm"/>
+			<FormResources Include="EventLog\RestypeFrm.dfm"/>
+			<FormResources Include="EventLog\LogData.dfm"/>
+			<FormResources Include="EventLog\SelectFieldFrm.dfm"/>
+			<FormResources Include="EventLog\SourceTbFrm.dfm"/>
+			<FormResources Include="LendReturn\options.dfm"/>
+			<FormResources Include="UserAdmin\UserData.dfm"/>
+			<FormResources Include="LendReturn\gotopage.dfm"/>
+			<FormResources Include="LendReturn\find.dfm"/>
+			<FormResources Include="LendReturn\Borrower.dfm"/>
+			<FormResources Include="UserAdmin\UserFrm.dfm"/>
+			<FormResources Include="frm_StoryInput.dfm"/>
+			<FormResources Include="MaterialInput\ShelfFrm.dfm"/>
+			<FormResources Include="LendReturn\InfoReport.dfm"/>
+			<FormResources Include="LendReturn\FindMaterail.dfm"/>
+			<FormResources Include="LendReturn\dmData.dfm"/>
+			<FormResources Include="LendReturn\FindUser.dfm"/>
+			<FormResources Include="MaterialInput\QueryFrm.dfm"/>
+			<FormResources Include="LendReturn\PrevFrm.dfm"/>
+			<FormResources Include="Template\ImportFrm.dfm"/>
+			<FormResources Include="Template\utAuth.dfm"/>
+			<FormResources Include="Template\TemplateForm.dfm"/>
+			<FormResources Include="Template\WizardFrm.dfm"/>
+			<FormResources Include="Template\utNewExt.dfm"/>
+			<FormResources Include="LendReturn\lendmain.dfm"/>
+			<FormResources Include="Template\utGlobDm.dfm"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">3076</VersionInfo>
+						<VersionInfo Name="CodePage">950</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Debugging>
+						<Debugging Name="DebugSourceDirs"/>
+					</Debugging>
+					<Parameters>
+						<Parameters Name="RunParams"/>
+						<Parameters Name="Launcher"/>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="DebugCWD"/>
+						<Parameters Name="HostApplication"/>
+						<Parameters Name="RemoteHost"/>
+						<Parameters Name="RemotePath"/>
+						<Parameters Name="RemoteParams"/>
+						<Parameters Name="RemoteLauncher"/>
+						<Parameters Name="UseRemoteLauncher">False</Parameters>
+						<Parameters Name="RemoteCWD"/>
+						<Parameters Name="RemoteDebug">False</Parameters>
+						<Parameters Name="Debug Symbols Search Path"/>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">False</ProjectProperties>
+					</ProjectProperties>
+					<Source>
+						<Source Name="MainSource">StoryInput.cpp</Source>
+					</Source>
+					<Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files\FastReport VCL Trial\LibD14\dclfrxIntIO14.bpl">FastReport VCL Internet transports</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files\FastReport VCL Trial\LibD14\dclfrxIntIOIndy14.bpl">FastReport VCL Internet transports</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files\FastReport VCL Trial\LibD14\dclfrxHTML14.bpl">FastReport VCL HTMLView Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files\FastReport VCL Trial\LibD14\dclfrxPDF14.bpl">FastReport VCL PDF Component</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files\FastReport VCL Trial\LibD14\dclfrxcs14.bpl">FastReport VCL Client/Server Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files\FastReport VCL Trial\LibD14\dclfrxe14.bpl">FastReport VCL Exports</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files\FastReport VCL Trial\LibD14\dclfrxTee14.bpl">FastReport VCL Tee Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files\FastReport VCL Trial\LibD14\dclfsTee14.bpl">FastScript 1.9 Tee Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files\FastReport VCL Trial\LibD14\dclfrxADO14.bpl">FastReport VCL ADO Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files\FastReport VCL Trial\LibD14\dclfsADO14.bpl">FastScript 1.9 ADO Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files\FastReport VCL Trial\LibD14\dclfrxIBX14.bpl">FastReport VCL IBX Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Admin\AppData\Local\tmssoftware\trial\TMSVCLUIPack RS2010\Win32\TMSVCLUIPackPkgDED2010.bpl">TMS VCL UI Pack design time support</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcboffice2k140.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcbofficexp140.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+					</Excluded_Packages>
+					<Folders>
+						<Folder Masks="*.*" Path="UserAdmin" ShowSubdirectories="false"/>
+					</Folders>
+				</CPlusPlusBuilder.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
