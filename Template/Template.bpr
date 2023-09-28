@@ -1,0 +1,228 @@
+# ---------------------------------------------------------------------------
+!if !$d(BCB)
+BCB = $(MAKEDIR)\..
+!endif
+
+# ---------------------------------------------------------------------------
+# IDE SECTION
+# ---------------------------------------------------------------------------
+# The following section of the project makefile is managed by the BCB IDE.
+# It is recommended to use the IDE to change any of the values in this
+# section.
+# ---------------------------------------------------------------------------
+
+VERSION = BCB.03
+# ---------------------------------------------------------------------------
+PROJECT = Template.dll
+OBJFILES = Template.obj CommFunc.obj TemplateForm.obj DllForm.obj DllHead.obj \
+  WizardFrm.obj ImportFrm.obj utGlobDm.obj utNewExt.obj htmlform.obj utAuth.obj
+RESFILES =
+DEFFILE =
+RESDEPEN = $(RESFILES) TemplateForm.dfm WizardFrm.dfm ImportFrm.dfm utGlobDm.dfm \
+  utNewExt.dfm utAuth.dfm
+LIBFILES =
+LIBRARIES = newpkg.lib vsspell.lib extlistv.lib Aoutlbrp.lib dvtlab.lib VCLSMP35.lib \
+  Asgpkg.lib
+SPARELIBS = VCL35.lib NMFAST35.lib VCLX35.lib Asgpkg.lib VCLSMP35.lib dvtlab.lib \
+  VCLDB35.lib Aoutlbrp.lib dclocx35.lib QRPT35.lib extlistv.lib vsspell.lib \
+  bcbsmp35.lib PKIECTRL.lib newpkg.lib
+PACKAGES = VCLX35.bpi VCL35.bpi VCLDB35.bpi VCLDBX35.bpi bcbsmp35.bpi dclocx35.bpi \
+  QRPT35.bpi TEEUI35.bpi TEEDB35.bpi TEE35.bpi ibsmp35.bpi DSS35.bpi NMFAST35.bpi \
+  INETDB35.bpi INET35.bpi VCLMID35.bpi PKIECTRL.bpi
+# ---------------------------------------------------------------------------
+PATHCPP = .;
+PATHASM = .;
+PATHPAS = .;
+PATHRC = .;
+DEBUGLIBPATH = $(BCB)\lib\debug
+RELEASELIBPATH = $(BCB)\lib\release
+# ---------------------------------------------------------------------------
+CFLAG1 = -WD -O2 -Hc -w -Ve -k- -vi -c -b- -w-par -w-inl -Vx
+CFLAG2 = -D_RTLDLL;USEPACKAGES \
+  -I$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\extlstv;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn \
+  -H=$(BCB)\lib\vcl35.csm
+CFLAG3 = -Tkh30000 -4
+PFLAGS = -U"d:\program files\borland\cbuilder3\lib\imageen";$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\extlstv;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn;$(RELEASELIBPATH) \
+  -D_RTLDLL;USEPACKAGES \
+  -I$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\extlstv;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn \
+  -$L- -$D- -v -JPHN -M
+RFLAGS = -D_RTLDLL;USEPACKAGES \
+  -i$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\extlstv;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn
+AFLAGS = /i$(BCB)\include /i$(BCB)\include\vcl /i$(BCB)\lib\advgrid \
+  /i$(BCB)\lib\aoutlbar /i$(BCB)\lib\dvtlab /i$(BCB)\lib\extlstv \
+  /i$(BCB)\lib\extlistv /i$(BCB)\lib\ImageEn /d_RTLDLL /dUSEPACKAGES /mx /w2 /zn
+LFLAGS = -L"d:\program files\borland\cbuilder3\lib\imageen";$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\extlstv;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn;$(RELEASELIBPATH) \
+  -aa -Tpd -x -Gn -Gi
+IFLAGS =
+# ---------------------------------------------------------------------------
+ALLOBJ = c0d32.obj $(PACKAGES) sysinit.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib
+# ---------------------------------------------------------------------------
+!ifdef IDEOPTIONS
+
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=2052
+CodePage=936
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=15
+Item0=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\extlstv;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn
+Item1=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\extlstv;$(BCB)\lib\extlistv
+Item2=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\extlistv
+Item3=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab
+Item4=h:\bcb3\cbuilder3\projects;..\..\..\program files\borland\cbuilder3\projects;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab
+Item5=..\..\..\program files\borland\cbuilder3\projects;g:\program files\borland\cbuilder3\projects;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab
+Item6=g:\program files\borland\cbuilder3\projects;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab
+Item7=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\rx
+Item8=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar
+Item9=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\combobox;$(BCB)\lib\gradform;$(BCB)\lib\indextab;$(BCB)\lib\tb97;$(BCB)\lib\menus97
+Item10=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\combobox;$(BCB)\lib\gradform;$(BCB)\lib\indextab;$(BCB)\lib\tb97;$(BCB)\lib\animenu98
+Item11=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\combobox;$(BCB)\lib\gradform;$(BCB)\lib\indextab;$(BCB)\lib\tb97
+Item12=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\combobox;$(BCB)\lib\gradform;$(BCB)\lib\indextab
+Item13=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\combobox;$(BCB)\lib\gradform
+Item14=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\lib\advgrid
+
+[HistoryLists\hlLibraryPath]
+Count=15
+Item0=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\extlstv;$(BCB)\lib\extlistv;$(BCB)\lib\ImageEn
+Item1=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\extlstv;$(BCB)\lib\extlistv
+Item2=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\extlistv
+Item3=h:\bcb3\cbuilder3\projects;..\..\..\program files\borland\cbuilder3\lib;..\..\..\program files\borland\cbuilder3\projects;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab
+Item4=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab
+Item5=..\..\..\program files\borland\cbuilder3\projects;g:\program files\borland\cbuilder3\projects;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab
+Item6=g:\program files\borland\cbuilder3\projects;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab
+Item7=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar;$(BCB)\lib\dvtlab;$(BCB)\lib\rx
+Item8=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\aoutlbar
+Item9=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\gradform;$(BCB)\lib\colorbtn;$(BCB)\lib\combobox;$(BCB)\lib\aoutlbar;$(BCB)\lib\indextab;$(BCB)\lib\tb97;$(BCB)\lib\menus97
+Item10=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\gradform;$(BCB)\lib\colorbtn;$(BCB)\lib\combobox;$(BCB)\lib\aoutlbar;$(BCB)\lib\indextab;$(BCB)\lib\tb97;$(BCB)\lib\animenu98
+Item11=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\gradform;$(BCB)\lib\colorbtn;$(BCB)\lib\combobox;$(BCB)\lib\aoutlbar;$(BCB)\lib\indextab;$(BCB)\lib\tb97
+Item12=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\gradform;$(BCB)\lib\colorbtn;$(BCB)\lib\combobox;$(BCB)\lib\aoutlbar;$(BCB)\lib\indextab
+Item13=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid;$(BCB)\lib\gradform;$(BCB)\lib\colorbtn;$(BCB)\lib\combobox;$(BCB)\lib\aoutlbar
+Item14=$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\advgrid
+
+[HistoryLists\hlDebugSourcePath]
+Count=3
+Item0=$(BCB)\source\vcl;$(BCB)\lib\dvtlab
+Item1=$(BCB)\source\vcl;$(BCB)\lib\dvtlab;$(BCB)\lib\rx
+Item2=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=2
+Item0=_RTLDLL;USEPACKAGES
+Item1=_RTLDLL
+
+[HistoryLists\hlHostApplication]
+Count=5
+Item0=E:\WORK\library\Main\Library.exe
+Item1=I:\bcb3\Library\main\Library.exe
+Item2=G:\Library\Main\Library.exe
+Item3=D:\WORK\library\Main\Library.exe
+Item4=..\Main\Library.exe
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl;$(BCB)\lib\dvtlab
+
+[Parameters]
+RunParams=
+HostApplication=E:\WORK\library\Main\Library.exe
+
+!endif
+
+# ---------------------------------------------------------------------------
+# MAKE SECTION
+# ---------------------------------------------------------------------------
+# This section of the project file is not used by the BCB IDE.  It is for
+# the benefit of building from the command-line using the MAKE utility.
+# ---------------------------------------------------------------------------
+
+.autodepend
+# ---------------------------------------------------------------------------
+!if !$d(BCC32)
+BCC32 = bcc32
+!endif
+
+!if !$d(DCC32)
+DCC32 = dcc32
+!endif
+
+!if !$d(TASM32)
+TASM32 = tasm32
+!endif
+
+!if !$d(LINKER)
+LINKER = ilink32
+!endif
+
+!if !$d(BRCC32)
+BRCC32 = brcc32
+!endif
+# ---------------------------------------------------------------------------
+!if $d(PATHCPP)
+.PATH.CPP = $(PATHCPP)
+.PATH.C   = $(PATHCPP)
+!endif
+
+!if $d(PATHPAS)
+.PATH.PAS = $(PATHPAS)
+!endif
+
+!if $d(PATHASM)
+.PATH.ASM = $(PATHASM)
+!endif
+
+!if $d(PATHRC)
+.PATH.RC  = $(PATHRC)
+!endif
+# ---------------------------------------------------------------------------
+$(PROJECT): $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(BCB)\BIN\$(LINKER) @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES)
+!
+# ---------------------------------------------------------------------------
+.pas.hpp:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.pas.obj:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.cpp.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.c.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.asm.obj:
+    $(BCB)\BIN\$(TASM32) $(AFLAGS) $<, $@
+
+.rc.res:
+    $(BCB)\BIN\$(BRCC32) $(RFLAGS) -fo$@ $<
+# ---------------------------------------------------------------------------
